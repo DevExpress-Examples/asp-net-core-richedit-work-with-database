@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model RichSaveLoadDB.Models.DocumentInfo
+
+<script src="~/node_modules/jszip/dist/jszip.min.js"></script>
+<script src="~/node_modules/devextreme/dist/js/dx.all.js"></script>
+<link href="~/node_modules/devextreme/dist/css/dx.common.css" rel="stylesheet" />
+<link href="~/node_modules/devextreme/dist/css/dx.light.css" rel="stylesheet" />
+
+@* If you export a document to PDF on the client side (the exportToPdf method) or enable client PDF printing mode,
+    you should register the pdfkit library before control script registration.*@
+<script src="~/node_modules/devexpress-richedit/dist/pdfkit.js"></script>
+
+<script src="~/node_modules/devexpress-richedit/dist/dx.richedit.js"></script>
+<link href="~/node_modules/devexpress-richedit/dist/dx.richedit.css" rel="stylesheet" />
+
+@(Html.DevExpress().RichEdit("richEdit")
+    .Width("100%")
+    .Height(800)
+    .ExportUrl(Url.Action("SaveDocument"))
+    .Open(() => { return Model.DocumentBytes; }, (DevExpress.AspNetCore.RichEdit.DocumentFormat)Model.DocumentFormat)
+)
