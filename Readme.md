@@ -1,9 +1,10 @@
 # RichEdit for ASP.NET Core - How to load/save documents from/to a database
 
-This example illustrates the main idea of loading and saving document from/to a database. This can be done as follows:
-1. Create a model, register the database context and add a connection string.
-2. Pass a model with a binary property (the rich text content to be displayed) to the RichEdit's view.
-3. Use the [RichEditBuilder.Open(Func<Byte[]>, DocumentFormat)](https://docs.devexpress.com/AspNetCore/DevExpress.AspNetCore.RichEdit.RichEditBuilder.Open(System.Func-System.Byte----DevExpress.AspNetCore.RichEdit.DocumentFormat)?p=netframework) method to open a new document with the necessary rich content type, and retrieve the binary content from the passed model.
+This example illustrates how to load and save a document from/to a database. You can do this as follows:
+
+1. Create a model, register the database context, and add a connection string.
+2. Pass a model with a binary property (rich text content to be displayed) to RichEdit's view.
+3. Use the [RichEditBuilder.Open(Func<Byte[]>, DocumentFormat)](https://docs.devexpress.com/AspNetCore/DevExpress.AspNetCore.RichEdit.RichEditBuilder.Open(System.Func-System.Byte----DevExpress.AspNetCore.RichEdit.DocumentFormat)?p=netframework) method to open a new document with the necessary rich content type and retrieve the binary content from the passed model.
 
 ```razor
 @(Html.DevExpress().RichEdit("richEdit")
@@ -13,7 +14,7 @@ This example illustrates the main idea of loading and saving document from/to a 
 )
 ```
 
-4. Specify the ExportUrl property and implement an action method to process the file saving:
+4. Set the ExportUrl property and implement an action method to save the file:
 
 ```csharp
 public IActionResult SaveDocument(string base64, string fileName, int format, string reason)
