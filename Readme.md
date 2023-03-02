@@ -4,7 +4,7 @@
 <!-- default badges end -->
 # Rich Text Editor for ASP.NET Core - How to load/save documents from/to a database
 
-This example demonstrates how to configure the [Rich Text Editor](https://docs.devexpress.com/AspNetCore/400373/rich-edit) to load/save a document from/to a database.
+This example demonstrates how to configure the [Rich Text Editor](https://docs.devexpress.com/AspNetCore/400373/rich-edit) control to load/save documents from/to a database.
 
 ![Rich Text Editor](rich-work-with-database.png)
 
@@ -29,7 +29,7 @@ Follow the steps bellow to configure the Rich Text Editor to work with a databas
 
 2. Register the database context and add a connection string.
 
-3. In the `Index` action method, load a document from the database and save it to a model:
+3. In the `Index` action method, load a document from the database and save the document to a model:
 
     ```cs
     public IActionResult Index() {
@@ -51,7 +51,7 @@ Follow the steps bellow to configure the Rich Text Editor to work with a databas
     )
     ```
 
-5. Implement an action method that saves the opened document back to the database. Assign this action method to the control's [ExportUrl](https://docs.devexpress.com/AspNetCore/DevExpress.AspNetCore.RichEdit.RichEditBuilder.ExportUrl(System.String)?p=netframework) property.
+5. Implement an action method that saves the document opened in the Rich Text Editor control back to the database. Assign this action method to the control's [ExportUrl](https://docs.devexpress.com/AspNetCore/DevExpress.AspNetCore.RichEdit.RichEditBuilder.ExportUrl(System.String)?p=netframework) property:
 
     ```csharp
     public IActionResult SaveDocument(string base64, string fileName, int format, string reason) {
@@ -64,9 +64,9 @@ Follow the steps bellow to configure the Rich Text Editor to work with a databas
             doc.DocumentName = fileName;
             _context.Docs.Add(doc);
         } else {
-                doc.DocumentBytes = fileContents;
-                doc.DocumentFormat = format;
-                doc.DocumentName = fileName;
+            doc.DocumentBytes = fileContents;
+            doc.DocumentFormat = format;
+            doc.DocumentName = fileName;
             }
         _context.SaveChanges();
         return Ok();
