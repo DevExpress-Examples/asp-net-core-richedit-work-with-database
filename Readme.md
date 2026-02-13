@@ -93,7 +93,7 @@ Follow the steps bellow to configure the Rich Text Editor to work with a databas
 
 * [Rich Text Editor for ASP.NET Core - How to submit document content with other values](https://github.com/DevExpress-Examples/richedit-for-asp-net-core-how-to-submit-document-content-with-other-values)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-core-richedit-work-with-database&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-core-richedit-work-with-database&~~~was_helpful=no)
 
