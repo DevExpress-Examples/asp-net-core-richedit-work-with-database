@@ -3,7 +3,7 @@
   "name": "asp.net",
   "private": true,
   "devDependencies": {
-    "devextreme-dist": "~24.2.1-alpha",
-    "devexpress-richedit": "~24.2.1-alpha"
+    "devextreme-dist": "26.1.5",
+    "devexpress-richedit": "26.1.5"
   }
 }
